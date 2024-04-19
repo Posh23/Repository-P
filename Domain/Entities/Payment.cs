@@ -1,12 +1,11 @@
 namespace ConsoleApp1.Entities;
 
-public class Payment
+public class Payment : BaseEntity
 {
-    public Guid Id { get; set; }
 
     public float Amount { get; set; }
 
     public  string Date { get; set; }
 
-    public PhotoSession Session { get; set; }
+    public PhotoSession PhotoSessions { get; set; }
 }

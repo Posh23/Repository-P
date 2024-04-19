@@ -1,8 +1,9 @@
+using System.Collections;
+
 namespace ConsoleApp1.Entities;
 
-public class PhotoSession
+public class PhotoSession : BaseEntity
 {
-    public Guid Id { get; set; }
 
     public string Date { get; set; }
 
@@ -10,5 +11,7 @@ public class PhotoSession
 
     public Photographer Photographer { get; set; }
 
-    public Client Client { get; set; }
+    public ICollection Client { get; set; }
+    public ICollection Payment { get; set; }
+    public object Magazines { get; set; }
 }
