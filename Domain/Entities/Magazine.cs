@@ -17,6 +17,6 @@ namespace ConsoleApp1.Entities
 
         public Equipment? Equipment { get; set; }
         public Guid EquiupmentId { get; set; }
-        public object EquipmentId { get; set; }
+        public Guid EquipmentId { get; set; }
     }
 }

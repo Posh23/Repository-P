@@ -16,8 +16,6 @@ namespace Infrastucture.Data.Configuration
 
             builder.Property(ps => ps.Duration)
                 .IsRequired();
-
-            // Устанавливаем внешний ключ для связи с фотографом
            
         }
     }

@@ -13,13 +13,16 @@ namespace Infrastucture.Data.Configuration
 
             builder.Property(s => s.Name)
                 .IsRequired()
-                .HasMaxLength(100); // Максимальная длина названия студии 100 символов
+                .HasMaxLength(100); 
 
             builder.Property(s => s.Address)
                 .IsRequired()
-                .HasMaxLength(200); // Максимальная длина адреса студии 200 символов
+                .HasMaxLength(200);
 
-            // Устанавливаем внешний ключ для связи с оборудованием
+            builder.HasOne(st => st.Equipments)
+               .WithMany(e => e.Studios)
+               .HasForeignKey(st => st.EquipmentId)
+               .OnDelete(DeleteBehavior.Cascade);
 
         }
     }

@@ -7,5 +7,5 @@ public class Payment : BaseEntity
 
     public  string Date { get; set; }
 
-    public PhotoSession PhotoSessions { get; set; }
+    public virtual ICollection<PhotoSession> PhotoSessions { get; set; }
 }

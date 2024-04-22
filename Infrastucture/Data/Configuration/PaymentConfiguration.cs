@@ -17,7 +17,7 @@ namespace Infrastucture.Data.Configuration
             builder.Property(p => p.Date)
                 .IsRequired();
 
-            // Устанавливаем внешний ключ для связи с фотосессией
+          
          
         }
     }

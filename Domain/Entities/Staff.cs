@@ -7,5 +7,6 @@ public class Staff : BaseEntity
 
     public string Position { get; set; }
 
-    public Studio Studio { get; set; }
+    public Studio Studios { get; set; }
+    public Guid StudioId { get; set; }
 }

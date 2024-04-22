@@ -1,6 +1,6 @@
 using ConsoleApp1.Entities;
 using Domain.Interfaces.Repositories;
-using Infrastucture.Data.Configuration;
+using Infrastucture.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories
@@ -26,9 +26,9 @@ namespace Infrastructure.Repositories
         public async Task<bool> DeleteAsync(TEntity entity, CancellationToken token = default)
         {
             _dbSet.Remove(entity);
+
             return await _context.SaveChangesAsync(token) > 0;
         }
-
         public async Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken token = default)
         {
             return await _dbSet.ToListAsync(token);
@@ -38,6 +38,8 @@ namespace Infrastructure.Repositories
         {
             return await _dbSet.FindAsync(id, token);
         }
+
+    
 
         public async Task<bool> UpdateAsync(TEntity entity, CancellationToken token = default)
         {

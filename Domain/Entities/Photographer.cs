@@ -9,5 +9,7 @@ public class Photographer : BaseEntity
 
     public string Specialty { get; set; }
     public PhotoSession PhotoSessions { get; set; }
-   
+    public Guid PhotoSessionId { get; set; }
+
+
 }

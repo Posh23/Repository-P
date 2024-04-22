@@ -1,63 +1,66 @@
-﻿
-
-using ConsoleApp1.Entities;
+﻿using ConsoleApp1.Entities;
 using Domain.Interfaces.Repositories;
+
 
 namespace Application.Services
 {
-    public class ClientService : IBaseRepository<Client>
-    {
-        private readonly IBaseRepository<Client> _clientRepository;
+    
+        public class ClientService : IBaseService<Client>
+        {
+            private readonly IBaseRepository<Client> _ClientRepository;
+        private object Client;
 
         public ClientService(IBaseRepository<Client> clientRepository)
-        {
-            _clientRepository = clientRepository;
-        }
+            {
+            _ClientRepository = clientRepository;
+            }
 
-        public async Task<Client> CreateAsync(Client client, CancellationToken token = default)
-        {
-            return await _clientRepository.CreateAsync(client, token);
-        }
+            public async Task<Client> CreateAsync(Client client, CancellationToken token = default)
+            {
+                return await _ClientRepository.CreateAsync(client, token);
+            }
+
+
 
         public async Task<bool> DeleteAsync(Guid id, CancellationToken token = default)
         {
-            var client = await _clientRepository.GetAsync(id);
+            var client = await _ClientRepository.GetAsync(id, token);
 
             if (client == null)
                 return false;
 
-            return await _clientRepository.DeleteAsync(client, token);
-        }
-
-        public Task<bool> DeleteAsync(Client entity, CancellationToken token = default)
-        {
-            throw new NotImplementedException();
+            return await _ClientRepository.DeleteAsync(client, token);
         }
 
         public async Task<IEnumerable<Client>> GetAllAsync(CancellationToken token = default)
-        {
-            return await _clientRepository.GetAllAsync(token);
-        }
-
-        public async Task<Client> GetAsync(Guid id, CancellationToken token = default)
-        {
-            return await _clientRepository.GetAsync(id, token);
-        }
-
-        public async Task<bool> UpdateAsync(Client client, CancellationToken token = default)
-        {
-            var existingClient = await GetAsync(client.Id);
-
-            if (existingClient is null)
             {
-                return false;
+                return await _ClientRepository.GetAllAsync(token);
             }
 
-            existingClient.Name = client.Name;
-            existingClient.Phone = client.Phone;
-            existingClient.Email = client.Email;
+            public async Task<Client> GetAsync(Guid id, CancellationToken token = default)
+            {
+                return await _ClientRepository.GetAsync(id, token);
+            }
 
-            return await _clientRepository.UpdateAsync(existingClient, token);
+
+
+        public async Task<bool> UpdateAsync(Client clients, CancellationToken token = default)
+            {
+                var existingClient = await GetAsync(clients.Id);
+
+                if (existingClient is null)
+                {
+                    return false;
+                }
+
+            existingClient.Name = clients.Name;
+            existingClient.Phone = clients.Phone;
+            existingClient.Email = clients.Email;
+
+            return await _ClientRepository.UpdateAsync(existingClient, token);
+
+            }
         }
     }
-}
+
+

@@ -10,4 +10,7 @@ public class Equipment : BaseEntity
     public string Condition { get; set; }
 
     public bool Availability { get; set; }
+
+    public virtual ICollection<Studio> Studios { get; set; }
+    public virtual ICollection<Magazine> Magazines { get; set; }
 }

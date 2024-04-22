@@ -13,14 +13,17 @@ namespace Infrastucture.Data.Configuration
 
             builder.Property(s => s.Name)
                 .IsRequired()
-                .HasMaxLength(100); // Максимальная длина имени 100 символов
+                .HasMaxLength(100); 
 
             builder.Property(s => s.Position)
                 .IsRequired()
-                .HasMaxLength(100); // Максимальная длина должности 100 символов
+                .HasMaxLength(100);
 
-            // Устанавливаем внешний ключ для связи с студией
-           
+            builder.HasOne(s => s.Studios)
+               .WithMany(st => st.Staffs)
+               .HasForeignKey(p => p.StudioId)
+               .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

@@ -9,9 +9,7 @@ public class PhotoSession : BaseEntity
 
     public int Duration { get; set; }
 
-    public Photographer Photographer { get; set; }
-
-    public ICollection Client { get; set; }
-    public ICollection Payment { get; set; }
-    public object Magazines { get; set; }
+    public virtual ICollection<Photographer> Photographers { get; set; }
+ 
+    public virtual ICollection<Magazine> Magazines { get; set; }
 }
