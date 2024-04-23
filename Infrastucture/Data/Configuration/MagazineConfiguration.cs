@@ -25,7 +25,7 @@ namespace Infrastucture.Data.Configuration
 
             builder.HasOne(m => m.Equipment)
                .WithMany(p => p.Magazines)
-               .HasForeignKey(m => m.EquiupmentId)
+               .HasForeignKey(m => m.EquipmentId)
                .OnDelete(DeleteBehavior.Cascade);
 
 
