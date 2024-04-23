@@ -1,4 +1,4 @@
-﻿using ConsoleApp1.Entities;
+﻿using Domain.Entities;
 using Domain.Interfaces.Repositories;
 
 

@@ -1,5 +1,5 @@
-﻿using ConsoleApp1.Entities;
-
+﻿
+using Domain.Entities;
 
 namespace Domain.Interfaces.Repositories
 {

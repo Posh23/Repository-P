@@ -1,8 +1,8 @@
-namespace ConsoleApp1.Entities;
+namespace Domain.Entities;
 
 public class Studio : BaseEntity
 {
-
+    public Guid Id { get; set; }
     public string Name { get; set; }
 
     public string Address { get; set; }

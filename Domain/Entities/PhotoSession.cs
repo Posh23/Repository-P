@@ -1,10 +1,10 @@
 using System.Collections;
 
-namespace ConsoleApp1.Entities;
+namespace Domain.Entities;
 
 public class PhotoSession : BaseEntity
 {
-
+    public Guid Id { get; set; }
     public string Date { get; set; }
 
     public int Duration { get; set; }

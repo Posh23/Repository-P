@@ -1,5 +1,5 @@
 ﻿using Application.Services;
-using ConsoleApp1.Entities;
+using Domain.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 

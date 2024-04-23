@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ConsoleApp1.Entities;
+using Domain.Entities;
 using Contracts.Requests;
 using Contracts.Responses;
 

@@ -1,4 +1,6 @@
-﻿using ConsoleApp1.Entities;
+﻿
+
+using Domain.Entities;
 
 namespace Contracts.Requests
 {

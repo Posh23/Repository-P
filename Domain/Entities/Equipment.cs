@@ -1,8 +1,8 @@
-namespace ConsoleApp1.Entities;
+namespace Domain.Entities;
 
 public class Equipment : BaseEntity
 {
-
+    public Guid Id { get; set; }
     public string Type { get; set; }
 
     public string Brand { get; set; }

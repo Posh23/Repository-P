@@ -1,6 +1,6 @@
 ﻿
 
-using ConsoleApp1.Entities;
+using Domain.Entities;
 
 namespace Application.Services
 {

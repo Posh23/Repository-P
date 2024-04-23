@@ -1,8 +1,8 @@
-namespace ConsoleApp1.Entities;
+namespace Domain.Entities;
 
 public class Photographer : BaseEntity
 {
-
+    public Guid Id { get; set; }
     public string Name { get; set; }
 
     public int Age { get; set; }
