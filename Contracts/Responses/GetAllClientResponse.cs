@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Contracts.Responses
 {
-    public class GetAllBuildingsResponse
+    public class GetAllClientResponse
     {
-        public IEnumerable<SingleBuildingResponse> Items { get; set; } = Enumerable.Empty<SingleBuildingResponse>();
+        public IEnumerable<SingleClientResponse> Items { get; set; } = Enumerable.Empty<SingleClientResponse>();
     }
 }

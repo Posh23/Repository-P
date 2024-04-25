@@ -6,10 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastucture.Data.Configuration 
+namespace Infrastucture.Data
 {
     public class ApplicationDbInitializer : IApplicationDbInitializer
-{
+    {
         private readonly ApplicationDbContext _context;
 
         public ApplicationDbInitializer(ApplicationDbContext context)

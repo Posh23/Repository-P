@@ -1,4 +1,4 @@
-﻿using ConsoleApp1.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,14 +12,23 @@ namespace Infrastucture.Data.Configuration
 
             builder.Property(m => m.Name)
                 .IsRequired()
-                .HasMaxLength(100); // Максимальная длина названия журнала 100 символов
+                .HasMaxLength(100); 
 
             builder.Property(m => m.Type)
                 .IsRequired()
-                .HasMaxLength(100); // Максимальная длина типа журнала 100 символов
+                .HasMaxLength(100);
 
-            // Устанавливаем внешний ключ для связи с фотосессией
-          
+            builder.HasOne(m => m.PhotoSession)
+                .WithMany(p => p.Magazines)
+                .HasForeignKey(m => m.PhotoSessionId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(m => m.Equipment)
+               .WithMany(p => p.Magazines)
+               .HasForeignKey(m => m.EquipmentId)
+               .OnDelete(DeleteBehavior.Cascade);
+
+
         }
     }
 }

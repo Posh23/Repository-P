@@ -1,4 +1,4 @@
-namespace ConsoleApp1.Enum;
+namespace Domain.Enum;
 
 public enum Equipment
 {

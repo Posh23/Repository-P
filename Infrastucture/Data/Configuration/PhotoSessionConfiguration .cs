@@ -1,4 +1,4 @@
-﻿using ConsoleApp1.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -16,8 +16,6 @@ namespace Infrastucture.Data.Configuration
 
             builder.Property(ps => ps.Duration)
                 .IsRequired();
-
-            // Устанавливаем внешний ключ для связи с фотографом
            
         }
     }

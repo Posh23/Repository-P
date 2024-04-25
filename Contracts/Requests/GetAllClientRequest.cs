@@ -1,8 +1,10 @@
-﻿using ConsoleApp1.Entities;
+﻿
+
+using Domain.Entities;
 
 namespace Contracts.Requests
 {
-    public class GetAllBuildingsRequest
+    public class GetAllClientRequest
     {
         public IEnumerable<Client> Items { get; set; } = Enumerable.Empty<Client>();
 

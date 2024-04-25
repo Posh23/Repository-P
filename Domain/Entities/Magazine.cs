@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Entities
+namespace Domain.Entities
 {
     public class Magazine : BaseEntity
+
     {
+
+        public Guid Id { get; set; }
         public string Name { get; set; } = string.Empty;
 
         public string Type { get; set; } = string.Empty;
@@ -16,7 +19,8 @@ namespace ConsoleApp1.Entities
         public Guid PhotoSessionId { get; set; }
 
         public Equipment? Equipment { get; set; }
-        public Guid EquiupmentId { get; set; }
-        public object EquipmentId { get; set; }
+     
+        public Guid EquipmentId { get; set; }
+    //    public Guid EquipmentId { get; set; }
     }
 }

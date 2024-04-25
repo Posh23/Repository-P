@@ -1,4 +1,4 @@
-﻿using ConsoleApp1.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -17,7 +17,7 @@ namespace Infrastucture.Data.Configuration
             builder.Property(p => p.Date)
                 .IsRequired();
 
-            // Устанавливаем внешний ключ для связи с фотосессией
+          
          
         }
     }

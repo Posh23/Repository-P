@@ -1,4 +1,4 @@
-﻿using ConsoleApp1.Entities;
+﻿using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -12,15 +12,16 @@ namespace Infrastucture.Data.Configuration
 
             builder.Property(c => c.Name)
                 .IsRequired()
-                .HasMaxLength(100); // Максимальная длина имени 100 символов
+                .HasMaxLength(100); 
 
             builder.Property(c => c.Phone)
-                .HasMaxLength(20); // Максимальная длина номера телефона 20 символов
+                .HasMaxLength(20)
+                  .IsRequired();
 
             builder.Property(c => c.Email)
-                .HasMaxLength(100); // Максимальная длина email 100 символов
+                .HasMaxLength(100)
+                .IsRequired();
 
-            // Здесь можно добавить определение отношений, если они есть для клиента
         }
     }
 }
